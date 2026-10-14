@@ -1,2 +1,212 @@
 # MalariaPulse
-An agent-based malaria early-warning prototype that analyzes surveillance data, assesses clinic supply needs, and drafts targeted community health advisories.
+### Autonomous Multi-Agent System for Epidemic Early Warning & Community Intervention
+
+**MalariaPulse** is an AI-powered, multi-agent research project designed to support malaria surveillance, early warning, resource planning, and community intervention.
+
+The system brings together surveillance data, environmental indicators, and healthcare supply information to identify potential increases in malaria risk and translate those signals into actionable recommendations for local health authorities, clinics, and Community Health Workers (CHWs).
+
+Rather than functioning as a passive dashboard or a standalone chatbot, MalariaPulse aims to coordinate specialized AI agents that analyze data, exchange findings, and prepare responses for human review.
+
+> **Project status:** Early-stage research and development. Initial outputs are intended for demonstration and evaluation, not operational public-health decisions.
+
+## Objectives
+
+- **Early warning:** Identify unusual changes in reported malaria cases and estimate localized risk using available forecasting models.
+- **Resource planning:** Highlight potential shortages of essential malaria commodities and recommend restocking or redistribution for review.
+- **Community intervention:** Generate clear, localized public-health messages in English and Swahili.
+- **Agent collaboration:** Coordinate specialized agents through a structured workflow instead of relying on a single general-purpose chatbot.
+- **Evidence-based decisions:** Make recommendations traceable to available data, model outputs, assumptions, and limitations.
+
+## System Architecture
+
+MalariaPulse is organized around three collaborating agents.
+
+### 1. Surveillance & Prediction Agent
+
+**Responsibility:** Monitor malaria surveillance data and identify locations that may require further investigation.
+
+The agent will:
+- Analyze weekly malaria case reports across geographic areas.
+- Incorporate environmental indicators such as rainfall, temperature, and humidity when reliable data is available.
+- Integrate existing malaria forecasting models where possible.
+- Identify unusual trends and produce preliminary risk assessments.
+- Provide supporting evidence, data-quality warnings, and model limitations.
+
+**Output:** Localized risk assessments and preliminary early-warning alerts.
+
+### 2. Supply & Resource Orchestration Agent
+
+**Responsibility:** Translate surveillance signals into draft healthcare resource recommendations.
+
+The agent will:
+- Examine available clinic inventory data.
+- Monitor stock levels of rapid diagnostic test (RDT) kits, artemisinin-based combination therapy (ACT) medicines, and insecticide-treated bed nets.
+- Identify facilities that may need restocking.
+- Prioritize draft requests using risk assessments, stock levels, and available operational information.
+- Recommend possible redistribution or replenishment actions for authorized personnel to review.
+
+**Output:** Inventory risk summaries, restocking recommendations, and draft resource allocation plans.
+
+### 3. Community Action & Intervention Agent
+
+**Responsibility:** Convert reviewed surveillance findings into clear and locally relevant communication.
+
+The agent will:
+- Generate draft malaria prevention and early-diagnosis messages.
+- Tailor messages for Community Health Workers and community members.
+- Support English and Swahili, with additional local languages considered as the project develops.
+- Adapt message wording to the audience and the evidence available.
+- Prepare communication advisories for approval before distribution.
+
+**Output:** Localized outreach messages and community intervention drafts.
+
+## How the Agents Work Together
+
+The intended workflow is:
+
+1. **Collect data:** Obtain available malaria case reports, environmental indicators, and clinic inventory records.
+2. **Assess risk:** The Surveillance & Prediction Agent analyzes trends and produces a preliminary risk assessment.
+3. **Evaluate resources:** The Supply & Resource Orchestration Agent uses the assessment alongside inventory data to identify potential resource gaps.
+4. **Prepare communication:** The Community Action & Intervention Agent drafts relevant prevention and early-diagnosis messages.
+5. **Review and approve:** Authorized public-health personnel review the findings and approve any operational action or public communication.
+
+The agents will exchange structured outputs so that downstream recommendations can be traced to the data and assessments that informed them.
+
+## Proposed Technology Stack
+
+The final stack will be selected according to the team's existing models, data sources, and implementation constraints.
+
+| Component | Proposed technology |
+|---|---|
+| Programming language | Python |
+| Data processing | Pandas, NumPy |
+| Forecasting and analysis | Existing team models, with appropriate evaluation tools |
+| Agent orchestration | Python-based tool calling or an agent framework |
+| Language model | An LLM capable of tool calling, selected according to availability and requirements |
+| Prototype interface | Streamlit or a lightweight web application |
+| Data storage | CSV or structured local storage initially; a database as requirements grow |
+| Version control | Git and GitHub |
+
+These technologies are proposals, not finalized architectural decisions.
+
+## Initial MVP Scope
+
+The first milestone will focus on demonstrating the complete agent workflow with a small, controlled dataset.
+
+The MVP aims to:
+
+- Read sample weekly malaria case data.
+- Produce a preliminary risk assessment using an explicit baseline or an existing forecasting model.
+- Check sample clinic inventory and generate draft supply recommendations.
+- Produce English and Swahili community message drafts.
+- Combine the outputs into a single report.
+- Clearly document assumptions and require human review.
+
+Where real datasets or forecasting models are not yet available for integration, synthetic data may be used for development and demonstration.
+
+### Initial exclusions
+
+The first version will not attempt to:
+- Declare confirmed malaria outbreaks.
+- Automatically order, transfer, or distribute medical supplies.
+- Send public-health messages without approval.
+- Claim validated predictive accuracy without retrospective evaluation.
+- Replace epidemiologists, clinicians, or public-health decision-makers.
+
+## Data Requirements
+
+Potential inputs include:
+
+| Data source | Example fields | Purpose |
+|---|---|---|
+| Malaria surveillance | Reporting area, reporting week, reported cases | Trend analysis and forecasting |
+| Environmental data | Rainfall, temperature, humidity | Investigating environmental associations |
+| Clinic inventory | Facility, commodity, stock on hand, minimum stock | Identifying possible supply gaps |
+| Geographic data | Area identifiers, facility locations | Localized reporting and future logistics planning |
+
+Data availability, geographic coverage, reporting frequency, access permissions, privacy requirements, and quality will need to be assessed before integration.
+
+No real patient-identifiable information should be committed to this repository.
+
+## Safety, Validation & Governance
+
+MalariaPulse is intended to support, not replace, professional judgment.
+
+- Risk scores and thresholds must be evaluated against historical data before operational use.
+- Forecasting performance should be assessed using appropriate retrospective testing and comparison baselines.
+- Environmental associations must not be presented as proof of causation.
+- Supply recommendations must account for data quality and require authorized review.
+- Public-health messages must be reviewed for medical accuracy, cultural suitability, and translation quality.
+- Any future use of real clinical or facility data must follow applicable privacy, security, access-control, and data-governance requirements.
+- The system should record relevant inputs, model versions, assumptions, recommendations, and approval decisions.
+
+## Development Roadmap
+
+### Phase 1 — Foundation
+- [ ] Agree on the MVP use case and intended users.
+- [ ] Identify available malaria surveillance datasets.
+- [ ] Review the team's existing forecasting models.
+- [ ] Define data formats and agent input/output contracts.
+- [ ] Establish a reproducible development environment.
+
+### Phase 2 — Surveillance Agent
+- [ ] Implement data validation and trend analysis.
+- [ ] Integrate an existing forecasting model or establish a baseline.
+- [ ] Define and evaluate preliminary risk indicators.
+- [ ] Return structured results with evidence and limitations.
+
+### Phase 3 — Supply Agent
+- [ ] Define an inventory data format.
+- [ ] Implement stock-level checks.
+- [ ] Generate draft restocking recommendations.
+- [ ] Incorporate surveillance risk into recommendation prioritization.
+
+### Phase 4 — Community Action Agent
+- [ ] Develop reviewed message templates.
+- [ ] Generate English and Swahili drafts.
+- [ ] Add audience-specific message formatting.
+- [ ] Establish a human approval workflow.
+
+### Phase 5 — Agent Coordination & Evaluation
+- [ ] Connect the three agents through an orchestrator.
+- [ ] Add tool calling where it provides meaningful value.
+- [ ] Test the end-to-end workflow.
+- [ ] Evaluate outputs, document limitations, and demonstrate the prototype.
+- [ ] Explore a dashboard and approved external data integrations.
+
+## Getting Started
+
+Setup instructions will be added once the initial implementation and dependencies are established.
+
+The intended development workflow is:
+
+1. Clone the repository.
+2. Create and activate a Python virtual environment.
+3. Install the project's dependencies.
+4. Configure approved data sources using local environment variables where required.
+5. Run the prototype using sample data.
+6. Review the agent outputs and tests.
+
+Never commit API keys, credentials, patient records, or other sensitive data.
+
+## Contributing
+
+MalariaPulse is a collaborative project. Team members can contribute to modelling, data engineering, agent development, public-health research, testing, and documentation.
+
+Before implementing a major feature:
+
+1. Discuss the problem and intended outcome with the team.
+2. Open an issue describing the proposed change.
+3. Identify required data, assumptions, and evaluation criteria.
+4. Submit changes through a branch and pull request.
+5. Include tests or evidence showing that the change works.
+
+## Research Direction
+
+MalariaPulse explores how agentic AI can connect epidemiological modelling with practical response planning. Its long-term direction is to move from detecting potential risk to coordinating evidence-based recommendations, while keeping public-health professionals involved in consequential decisions.
+
+**The guiding principle: detect earlier, plan smarter, and communicate clearly.**
+
+---
+
+**Disclaimer:** MalariaPulse is a research and development initiative. It is not a validated medical, diagnostic, or public-health alerting system. All outputs require appropriate validation and professional review before real-world use.

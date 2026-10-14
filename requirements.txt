@@ -1,0 +1,5 @@
+mcp>=1.9,<2          # MCP Python SDK (v1 API: FastMCP). Pinned below 2.x on purpose.
+google-genai>=1.0    # Gemini API (optional, only needed for --mode llm)
+python-dotenv>=1.0
+streamlit>=1.35      # human review dashboard
+pytest>=8.0

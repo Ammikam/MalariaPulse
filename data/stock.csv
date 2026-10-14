@@ -1,0 +1,28 @@
+zone,facility,item,units_in_stock,avg_weekly_use
+Lakeview,Lakeview Health Centre,RDT kits,183,136.3
+Lakeview,Lakeview Health Centre,ACT treatments,118,87.6
+Lakeview,Lakeview Health Centre,Bed nets,131,48.7
+Lakeview,Pier Dispensary,RDT kits,122,90.8
+Lakeview,Pier Dispensary,ACT treatments,78,58.4
+Lakeview,Pier Dispensary,Bed nets,87,32.4
+Riverbend,Riverbend Clinic,RDT kits,137,101.9
+Riverbend,Riverbend Clinic,ACT treatments,88,65.5
+Riverbend,Riverbend Clinic,Bed nets,98,36.4
+Riverbend,Ford Road Dispensary,RDT kits,74,54.9
+Riverbend,Ford Road Dispensary,ACT treatments,47,35.3
+Riverbend,Ford Road Dispensary,Bed nets,52,19.6
+Highland Ridge,Ridge Health Post,RDT kits,46,13.2
+Highland Ridge,Ridge Health Post,ACT treatments,30,8.5
+Highland Ridge,Ridge Health Post,Bed nets,26,4.7
+Savanna East,Savanna Health Centre,RDT kits,122,38.6
+Savanna East,Savanna Health Centre,ACT treatments,104,24.8
+Savanna East,Savanna Health Centre,Bed nets,104,13.8
+Coastal Flats,Flats Health Centre,RDT kits,118,34.1
+Coastal Flats,Flats Health Centre,ACT treatments,84,21.9
+Coastal Flats,Flats Health Centre,Bed nets,95,12.2
+Coastal Flats,Harbour Dispensary,RDT kits,63,22.7
+Coastal Flats,Harbour Dispensary,ACT treatments,60,14.6
+Coastal Flats,Harbour Dispensary,Bed nets,59,8.1
+Dry Plains,Plains Dispensary,RDT kits,52,15.5
+Dry Plains,Plains Dispensary,ACT treatments,37,10.0
+Dry Plains,Plains Dispensary,Bed nets,35,5.5
